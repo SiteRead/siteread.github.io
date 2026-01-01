@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SiteRead.ai | The Trap Detector for Construction Specs</title>
+    <title>SiteRead.app | The Trap Detector for Construction Specs</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,7 +45,7 @@
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <div class="flex items-center gap-2 font-bold text-xl tracking-tight text-slate-900">
                 <i data-lucide="scan-search" class="text-blue-600"></i>
-                SiteRead.ai
+                SiteRead.app
             </div>
             <a href="#waitlist" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">
                 Get Early Access
@@ -75,14 +75,21 @@
 
             <div id="waitlist" class="max-w-md mx-auto relative group">
                 <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-                <form id="signup-form" class="relative flex bg-white p-2 rounded-xl border border-slate-200 shadow-xl">
-                    <input type="email" id="email" placeholder="work@company.com" required
+                
+                <form id="signup-form" action="https://formsubmit.co/YOUR_EMAIL@gmail.com" method="POST" class="relative flex bg-white p-2 rounded-xl border border-slate-200 shadow-xl">
+                    
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    
+                    <input type="email" name="email" id="email" placeholder="work@company.com" required
                         class="flex-1 bg-transparent px-4 py-3 text-slate-900 outline-none placeholder:text-slate-400">
-                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-all flex items-center gap-2">
+                    
+                    <button type="submit" id="submit-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-all flex items-center gap-2">
                         Join Beta <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
                 </form>
             </div>
+            
             <p id="success-msg" class="hidden mt-4 text-green-600 font-medium flex items-center justify-center gap-2">
                 <i data-lucide="check-circle" class="w-4 h-4"></i> You're on the list. We'll be in touch.
             </p>
@@ -172,7 +179,7 @@
                             </div>
                             <div>
                                 <h3 class="font-bold text-slate-900">Trap Detection</h3>
-                                <p class="text-sm text-slate-600 mt-1">We flag "Non-Standard" requirements: Extended Warranties, expensive Mockups, and Attic Stock.</p>
+                                <p class="text-sm text-slate-600 mt-1">We flag "Cost Traps": <strong>Liquidated Damages</strong>, <strong>Bid Bonds</strong>, and Extended Warranties.</p>
                             </div>
                         </div>
 
@@ -239,7 +246,7 @@
         <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2 font-bold text-slate-900">
                 <i data-lucide="scan-search" class="text-blue-600"></i>
-                SiteRead.ai
+                SiteRead.app
             </div>
             <div class="text-sm text-slate-500">
                 &copy; 2024 SiteRead. All rights reserved. <span class="mx-2">•</span> Built in Toronto 🇨🇦
@@ -255,21 +262,39 @@
         // Initialize Icons
         lucide.createIcons();
 
-        // Handle Form Logic
+        // Handle Form Submission (AJAX to FormSubmit so page doesn't reload)
         const form = document.getElementById('signup-form');
+        const submitBtn = document.getElementById('submit-btn');
         const successMsg = document.getElementById('success-msg');
-        const emailInput = document.getElementById('email');
 
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
-            const email = emailInput.value;
+            const btnText = submitBtn.innerHTML;
             
-            // --- TODO: Connect to backend (Supabase/Google Sheets/ConvertKit) ---
-            console.log("Captured Email:", email);
+            // Loading State
+            submitBtn.innerHTML = 'Sending...';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(form);
             
-            // Show success state
-            form.style.display = 'none';
-            successMsg.classList.remove('hidden');
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                // Success State
+                form.style.display = 'none';
+                successMsg.classList.remove('hidden');
+                // Optional: Fire Pixel Event here
+            })
+            .catch(error => {
+                submitBtn.innerHTML = btnText;
+                submitBtn.disabled = false;
+                alert('Something went wrong. Please try again.');
+            });
         });
     </script>
 
