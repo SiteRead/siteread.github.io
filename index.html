@@ -92,12 +92,13 @@
 
         <div class="max-w-4xl mx-auto text-center">
             
-            <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold mb-8 shadow-sm hover:shadow-md transition-shadow cursor-default">
-                <span class="relative flex h-2 w-2">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+            <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur border border-slate-200 text-slate-700 px-4 py-1.5 rounded-full text-xs font-medium mb-8 shadow-sm hover:shadow-md transition-all cursor-default group">
+                <span class="flex h-2 w-2 relative">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
-                Accepting Beta Testers
+                <span class="text-slate-500">Status:</span> <span class="text-emerald-600 font-bold group-hover:underline">Accepting Beta Testers</span>
+                <i data-lucide="chevron-right" class="w-3 h-3 text-slate-400 ml-1"></i>
             </div>
 
             <h1 class="text-4xl md:text-7xl font-bold tracking-tighter text-slate-900 mb-6 leading-[1.1]">
@@ -133,7 +134,7 @@
         </div>
     </header>
 
-    <section class="py-24 bg-slate-50 border-y border-slate-200 relative overflow-hidden">
+    <section class="py-24 bg-slate-50 border-b border-slate-200 relative overflow-hidden">
         <!-- Decorative blobs -->
         <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
         <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-indigo-100 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
@@ -194,6 +195,50 @@
         </div>
     </section>
 
+    <section class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-slate-900 mb-16">From PDF to Excel in 3 Steps</h2>
+            
+            <div class="grid md:grid-cols-3 gap-12 relative">
+                <!-- Connecting Line (Desktop) -->
+                <div class="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-gradient-to-r from-blue-100 via-blue-200 to-blue-100 z-0"></div>
+
+                <!-- Step 1 -->
+                <div class="relative z-10 group">
+                    <div class="w-24 h-24 mx-auto bg-white rounded-full border-2 border-blue-50 flex items-center justify-center mb-6 shadow-sm group-hover:border-blue-500 transition-colors duration-500">
+                        <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-600">
+                            <i data-lucide="upload-cloud" class="w-8 h-8"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">1. Upload Spec Book</h3>
+                    <p class="text-slate-500 leading-relaxed">Drag & drop your 1,000+ page PDF. Scanned files, messy formatting, or standard digital text—we handle it all.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative z-10 group">
+                    <div class="w-24 h-24 mx-auto bg-white rounded-full border-2 border-blue-50 flex items-center justify-center mb-6 shadow-sm group-hover:border-amber-500 transition-colors duration-500">
+                        <div class="w-16 h-16 bg-amber-50 rounded-full flex items-center justify-center text-amber-600">
+                            <i data-lucide="cpu" class="w-8 h-8"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">2. AI Scan</h3>
+                    <p class="text-slate-500 leading-relaxed">Our engine analyzes every page to extract Submittals and flag "Cost Traps" like extended warranties or mockups.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative z-10 group">
+                    <div class="w-24 h-24 mx-auto bg-white rounded-full border-2 border-blue-50 flex items-center justify-center mb-6 shadow-sm group-hover:border-green-500 transition-colors duration-500">
+                        <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-green-600">
+                            <i data-lucide="check-circle-2" class="w-8 h-8"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">3. Export & Verify</h3>
+                    <p class="text-slate-500 leading-relaxed">Download a clean Excel log or push directly to Procore. Verify the flags and you're done in minutes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="py-24 bg-slate-50">
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -237,43 +282,98 @@
 
                 <div class="relative group">
                     <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
-                    <div class="relative bg-slate-900 rounded-xl border border-slate-700 p-2 shadow-2xl">
-                        <div class="h-8 bg-slate-800 rounded-t-lg flex items-center px-3 gap-2 border-b border-slate-700">
-                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-amber-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                            <div class="ml-4 text-xs text-slate-400 font-mono">09_30_00_Tiling_Spec.pdf</div>
+                    <div class="relative bg-slate-900 rounded-xl border border-slate-700 shadow-2xl overflow-hidden">
+                        <!-- Window Controls -->
+                        <div class="h-8 bg-slate-800 flex items-center px-4 gap-2 border-b border-slate-700 select-none">
+                            <div class="flex gap-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition-colors"></div>
+                                <div class="w-3 h-3 rounded-full bg-amber-500 hover:bg-amber-600 transition-colors"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500 hover:bg-green-600 transition-colors"></div>
+                            </div>
+                            <div class="ml-4 text-xs text-slate-400 font-mono flex-1 text-center pr-12">SiteRead - Project_A12.pdf</div>
                         </div>
                         
-                        <div class="p-4 space-y-3 font-mono text-sm">
-                            
-                            <div class="flex items-start gap-3 opacity-50">
-                                <div class="text-slate-500 mt-1"><i data-lucide="check-square" class="w-4 h-4"></i></div>
-                                <div>
-                                    <div class="text-slate-400 text-xs uppercase mb-1">Product Data</div>
-                                    <div class="text-slate-300">Submit manufacturer's data for grout type A.</div>
-                                </div>
+                        <div class="flex h-[340px]">
+                            <!-- Sidebar -->
+                            <div class="w-16 bg-slate-800/50 border-r border-slate-700 flex flex-col items-center py-4 gap-6">
+                                <div class="p-2 bg-blue-600/20 text-blue-400 rounded-lg"><i data-lucide="layers" class="w-5 h-5"></i></div>
+                                <div class="p-2 text-slate-500 hover:text-slate-300 transition-colors cursor-pointer"><i data-lucide="file-text" class="w-5 h-5"></i></div>
+                                <div class="p-2 text-slate-500 hover:text-slate-300 transition-colors cursor-pointer"><i data-lucide="settings" class="w-5 h-5"></i></div>
+                                <div class="mt-auto p-2 text-slate-500 hover:text-slate-300 transition-colors cursor-pointer"><i data-lucide="log-out" class="w-5 h-5"></i></div>
                             </div>
 
-                            <div class="bg-slate-800 p-3 rounded-lg border-l-4 border-amber-500 flex items-start gap-3">
-                                <div class="text-amber-500 mt-1"><i data-lucide="alert-triangle" class="w-4 h-4"></i></div>
-                                <div>
-                                    <div class="flex justify-between items-center w-full">
-                                        <div class="text-amber-500 text-xs font-bold uppercase mb-1">Cost Trap Detected</div>
+                            <!-- Main Content -->
+                            <div class="flex-1 bg-slate-900 p-4 font-mono text-sm overflow-hidden flex flex-col">
+                                
+                                <!-- Toolbar -->
+                                <div class="flex justify-between items-center mb-4 pb-4 border-b border-slate-800">
+                                    <div class="flex gap-4 text-xs font-semibold">
+                                        <div class="text-blue-400 border-b-2 border-blue-400 pb-4 -mb-4.5">Detected (24)</div>
+                                        <div class="text-slate-500 hover:text-slate-300 cursor-pointer">Ignored (5)</div>
                                     </div>
-                                    <div class="text-white font-medium">Mockup: Build 100 sqft onsite mockup for Architect approval.</div>
-                                    <div class="text-xs text-slate-400 mt-2 hover:text-blue-400 cursor-pointer underline decoration-dotted">View Source (Page 412)</div>
+                                    <div class="text-xs text-slate-500">Filter: All Specs</div>
+                                </div>
+
+                                <!-- List -->
+                                <div class="space-y-3 overflow-y-auto pr-2 custom-scrollbar">
+                                    
+                                    <!-- Item 1 -->
+                                    <div class="flex items-start gap-3 opacity-60 hover:opacity-100 transition-opacity group/item cursor-default">
+                                        <div class="text-slate-500 mt-0.5"><i data-lucide="check-square" class="w-4 h-4"></i></div>
+                                        <div class="w-full">
+                                            <div class="flex justify-between">
+                                                <div class="text-slate-400 text-xs uppercase mb-0.5">09 30 00 • Product Data</div>
+                                                <div class="text-slate-600 text-[10px]">Pg 12</div>
+                                            </div>
+                                            <div class="text-slate-300 text-xs">Submit manufacturer's data for grout type A.</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Item 2 (Active/Trap) -->
+                                    <div class="bg-slate-800/80 p-3 rounded-lg border-l-4 border-amber-500 flex items-start gap-3 relative overflow-hidden group/item">
+                                        <div class="absolute inset-0 bg-amber-500/5 pointer-events-none"></div>
+                                        <div class="text-amber-500 mt-0.5"><i data-lucide="alert-triangle" class="w-4 h-4"></i></div>
+                                        <div class="w-full">
+                                            <div class="flex justify-between items-center w-full mb-1">
+                                                <div class="text-amber-500 text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 px-1.5 py-0.5 rounded">Cost Trap</div>
+                                                <div class="text-slate-500 text-[10px]">Pg 412</div>
+                                            </div>
+                                            <div class="text-slate-100 font-medium text-xs leading-relaxed">
+                                                "Contractor shall construct a <span class="bg-amber-500/20 text-amber-200 px-0.5 rounded">100 sqft onsite mockup</span> for Architect approval prior to ordering materials."
+                                            </div>
+                                            <div class="flex gap-2 mt-2">
+                                                <button class="text-[10px] bg-slate-700 hover:bg-slate-600 text-slate-200 px-2 py-1 rounded transition-colors">Flag for RFI</button>
+                                                <button class="text-[10px] bg-slate-700 hover:bg-slate-600 text-slate-200 px-2 py-1 rounded transition-colors">Add to Est.</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                     <!-- Item 3 -->
+                                     <div class="flex items-start gap-3 opacity-60 hover:opacity-100 transition-opacity group/item cursor-default">
+                                        <div class="text-slate-500 mt-0.5"><i data-lucide="check-square" class="w-4 h-4"></i></div>
+                                        <div class="w-full">
+                                            <div class="flex justify-between">
+                                                <div class="text-slate-400 text-xs uppercase mb-0.5">09 30 00 • Sample</div>
+                                                <div class="text-slate-600 text-[10px]">Pg 413</div>
+                                            </div>
+                                            <div class="text-slate-300 text-xs">Submit 3 samples of each color range.</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Item 4 -->
+                                    <div class="flex items-start gap-3 opacity-60 hover:opacity-100 transition-opacity group/item cursor-default">
+                                        <div class="text-slate-500 mt-0.5"><i data-lucide="check-square" class="w-4 h-4"></i></div>
+                                        <div class="w-full">
+                                            <div class="flex justify-between">
+                                                <div class="text-slate-400 text-xs uppercase mb-0.5">09 30 00 • Warranty</div>
+                                                <div class="text-slate-600 text-[10px]">Pg 415</div>
+                                            </div>
+                                            <div class="text-slate-300 text-xs">Provide 10-year manufacturer warranty.</div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
-
-                             <div class="flex items-start gap-3 opacity-50">
-                                <div class="text-slate-500 mt-1"><i data-lucide="check-square" class="w-4 h-4"></i></div>
-                                <div>
-                                    <div class="text-slate-400 text-xs uppercase mb-1">Sample</div>
-                                    <div class="text-slate-300">Submit 3 samples of each color.</div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
@@ -282,21 +382,59 @@
         </div>
     </section>
 
-    <footer class="bg-white border-t border-slate-200 py-12">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-2 font-bold text-slate-900">
-                <i data-lucide="scan-search" class="text-blue-600"></i>
-                SiteRead.app
+    <footer class="bg-white border-t border-slate-200 pt-16 pb-12">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 font-bold text-xl tracking-tight text-slate-900 mb-4">
+                        <i data-lucide="scan-search" class="text-blue-600"></i>
+                        SiteRead.app
+                    </div>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Helping construction teams bid faster and miss less. Built by estimators, for estimators.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="#" class="hover:text-blue-600 transition-colors">Features</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition-colors">Pricing</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition-colors">Procore Integration</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition-colors">Sample Report</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="#" class="hover:text-blue-600 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="#" class="hover:text-blue-600 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-blue-600 transition-colors">Security</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="text-sm text-slate-500">
-                &copy; 2024 SiteRead. All rights reserved. <span class="mx-2">•</span> Built in Toronto 🇨🇦
+            
+            <div class="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="text-sm text-slate-400">
+                    &copy; 2024 SiteRead Inc. All rights reserved. <span class="mx-2">•</span> Built in Toronto 🇨🇦
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="text-slate-400 hover:text-slate-600 transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-slate-600 transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-slate-600 transition-colors"><i data-lucide="github" class="w-5 h-5"></i></a>
+                </div>
             </div>
-            <!--
-            <div class="flex gap-4">
-                <a href="#" class="text-slate-400 hover:text-slate-600"><i data-lucide="twitter" class="w-5 h-5"></i></a>
-                <a href="#" class="text-slate-400 hover:text-slate-600"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
-            </div>
-            -->
         </div>
     </footer>
 
