@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SiteRead.app | The Trap Detector for Construction Specs</title>
+    <title>SiteRead | The Trap Detector for Construction Specs</title>
     <meta name="description" content="The 'Trap Detector' for Estimators & Project Engineers. We scan messy PDFs to find hidden Cost Impacts and generate Submittal Logs in seconds.">
     
     <meta property="og:title" content="SiteRead | The Trap Detector for Construction Specs">
@@ -76,9 +76,20 @@
 
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-2 font-bold text-xl tracking-tight text-slate-900">
-                <i data-lucide="scan-search" class="text-blue-600"></i>
-                SiteRead.app
+            <div class="flex items-center gap-3 font-bold text-xl tracking-tight text-slate-900">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 shadow-sm hover:scale-105 transition-transform duration-300">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M5 3a2 2 0 0 1 2-2h9l6 6v13a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V3z" fill="url(#logoGradient)"/>
+                    <path d="M16 1v6h6" class="fill-slate-600/30"/>
+                    <rect x="8" y="15" width="8" height="3" rx="1" class="fill-orange-500"/>
+                    <rect x="8" y="10" width="5" height="2" rx="0.5" class="fill-slate-600"/>
+                </svg>
+                SiteRead
             </div>
             <a href="#waitlist" class="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">
                 Get Early Access
@@ -111,7 +122,7 @@
                 The "Trap Detector" for Estimators & Project Engineers. We scan messy PDFs to find hidden <span class="text-slate-900 font-medium bg-amber-100 px-1 rounded border border-amber-200">Cost Impacts</span> and generate <span class="text-slate-900 font-medium bg-green-100 px-1 rounded border border-green-200">Submittal Logs</span> in seconds.
             </p>
 
-            <div id="waitlist" class="max-w-md mx-auto relative group">
+            <div id="waitlist" class="max-w-md mx-auto relative group scroll-mt-28">
                 <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-orange-600 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                 
                 <form id="signup-form" action="https://formsubmit.co/moosheashpaz@gmail.com" method="POST" class="relative flex bg-white p-2 rounded-xl border border-slate-200 shadow-2xl ring-1 ring-slate-100">
@@ -383,13 +394,98 @@
         </div>
     </section>
 
+    <section class="py-24 bg-white border-t border-slate-200">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                
+                <!-- FAQ Item 1 -->
+                <details class="group border border-slate-200 rounded-xl bg-slate-50/50 open:bg-white open:shadow-sm transition-all duration-300">
+                    <summary class="flex justify-between items-center cursor-pointer p-6 list-none font-bold text-slate-900 text-lg">
+                        <span>Is my project data secure?</span>
+                        <span class="transition-transform duration-300 group-open:rotate-180 text-slate-400">
+                            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-slate-600 leading-relaxed animate-in slide-in-from-top-2 fade-in duration-300">
+                        Yes. Security is our top priority. We process your specifications using enterprise-grade encryption. Files are analyzed ephemerally and are not stored after the report is generated. We do not use your proprietary project data to train our models.
+                    </div>
+                </details>
+
+                <!-- FAQ Item 2 -->
+                <details class="group border border-slate-200 rounded-xl bg-slate-50/50 open:bg-white open:shadow-sm transition-all duration-300">
+                    <summary class="flex justify-between items-center cursor-pointer p-6 list-none font-bold text-slate-900 text-lg">
+                        <span>Does this replace my Estimators?</span>
+                        <span class="transition-transform duration-300 group-open:rotate-180 text-slate-400">
+                            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-slate-600 leading-relaxed animate-in slide-in-from-top-2 fade-in duration-300">
+                        No. SiteRead is designed to be a "Second Pair of Eyes." An Estimator's job is to build the project strategy; our job is to catch the boring, repetitive "gotchas" (like Delegated Design clauses) that are easy to miss at 2 AM. We handle the reading; you handle the strategy.
+                    </div>
+                </details>
+
+                <!-- FAQ Item 3 -->
+                <details class="group border border-slate-200 rounded-xl bg-slate-50/50 open:bg-white open:shadow-sm transition-all duration-300">
+                    <summary class="flex justify-between items-center cursor-pointer p-6 list-none font-bold text-slate-900 text-lg">
+                        <span>What specific risks do you flag?</span>
+                        <span class="transition-transform duration-300 group-open:rotate-180 text-slate-400">
+                            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-slate-600 leading-relaxed animate-in slide-in-from-top-2 fade-in duration-300">
+                        We focus on Commercial & Liability Risks, not Engineering Code. Our algorithms specifically hunt for: Delegated Design requirements, Liquidated Damages clauses, Extended Warranty periods (beyond standard 1-year), and Sole Source manufacturers.
+                    </div>
+                </details>
+
+                <!-- FAQ Item 4 -->
+                <details class="group border border-slate-200 rounded-xl bg-slate-50/50 open:bg-white open:shadow-sm transition-all duration-300">
+                    <summary class="flex justify-between items-center cursor-pointer p-6 list-none font-bold text-slate-900 text-lg">
+                        <span>Do I need to upload special file formats?</span>
+                        <span class="transition-transform duration-300 group-open:rotate-180 text-slate-400">
+                            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-slate-600 leading-relaxed animate-in slide-in-from-top-2 fade-in duration-300">
+                        No. Just upload the standard Project Spec Book (PDF). Whether it's a 200-page Architectural spec or a 2,000-page full Project Manual, our system can parse it.
+                    </div>
+                </details>
+
+                <!-- FAQ Item 5 -->
+                <details class="group border border-slate-200 rounded-xl bg-slate-50/50 open:bg-white open:shadow-sm transition-all duration-300">
+                    <summary class="flex justify-between items-center cursor-pointer p-6 list-none font-bold text-slate-900 text-lg">
+                        <span>How much does it cost?</span>
+                        <span class="transition-transform duration-300 group-open:rotate-180 text-slate-400">
+                            <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-slate-600 leading-relaxed animate-in slide-in-from-top-2 fade-in duration-300">
+                        We are currently in a Private Beta for select General Contractors in Toronto. During this period, we are running free pilot reports for qualified partners. Request access to see if you qualify.
+                    </div>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
     <footer class="bg-white border-t border-slate-200 pt-16 pb-12">
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-12 mb-12">
                 <div class="col-span-1 md:col-span-1">
-                    <div class="flex items-center gap-2 font-bold text-xl tracking-tight text-slate-900 mb-4">
-                        <i data-lucide="scan-search" class="text-blue-600"></i>
-                        SiteRead.app
+                    <div class="flex items-center gap-3 font-bold text-xl tracking-tight text-slate-900 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8 shadow-sm">
+                            <defs>
+                                <linearGradient id="footerLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M5 3a2 2 0 0 1 2-2h9l6 6v13a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V3z" fill="url(#footerLogoGradient)"/>
+                            <path d="M16 1v6h6" class="fill-slate-600/30"/>
+                            <rect x="8" y="15" width="8" height="3" rx="1" class="fill-orange-500"/>
+                            <rect x="8" y="10" width="5" height="2" rx="0.5" class="fill-slate-600"/>
+                        </svg>
+                        SiteRead
                     </div>
                     <p class="text-slate-500 text-sm leading-relaxed">
                         Helping construction teams bid faster and miss less. Built by estimators, for estimators.
