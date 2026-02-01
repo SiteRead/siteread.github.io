@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | SiteRead</title>
+    <meta name="description" content="About SiteRead - AI-powered construction specification scanner.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📄</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #fafafa;
+            --color-text: #0a0a0a;
+            --color-text-muted: #525252;
+            --color-accent: #ea580c;
+            --color-border: #e5e5e5;
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-sans: 'Space Grotesk', sans-serif;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        body { font-family: var(--font-mono); background: var(--color-bg); color: var(--color-text); line-height: 1.7; }
+        h1, h2, h3 { font-family: var(--font-sans); font-weight: 600; letter-spacing: -0.03em; }
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+        h2 { font-size: 1.75rem; margin: 3rem 0 1rem; }
+        a { color: inherit; text-decoration: none; }
+        
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 0.75rem 0;
+            background: rgba(250, 250, 250, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(229, 229, 229, 0.6);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: -0.05em;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: opacity 0.2s ease;
+        }
+
+        .logo:hover {
+            opacity: 0.8;
+        }
+
+        .logo svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.875rem;
+        }
+
+        .nav-links a {
+            color: var(--color-text);
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+        
+        .page-header {
+            padding: 120px 2rem 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem;
+        }
+        .content p {
+            margin-bottom: 1.5rem;
+            color: var(--color-text-muted);
+        }
+        .content strong {
+            color: var(--color-text);
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+            padding: 2rem;
+            border: 1px solid var(--color-border);
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-accent);
+        }
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+        }
+        
+        .footer {
+            padding: 2rem;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="22" fill="#0a0a0a"/>
+                    <path d="M14 18L24 12L34 18V30L24 36L14 30V18Z" stroke="white" stroke-width="2.5" fill="none"/>
+                    <path d="M18 22L30 22" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M18 26L26 26" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+                    <circle cx="30" cy="30" r="5" fill="#ea580c"/>
+                    <path d="M27 30L33 30M30 27L30 33" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                SiteRead
+            </a>
+            <div class="nav-links">
+                <a href="features.html">Features</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>About SiteRead</h1>
+    </header>
+
+    <section class="content">
+        <p>SiteRead was founded by a team of construction professionals and AI engineers who experienced firsthand the pain of reviewing thousands of pages of construction specifications.</p>
+        
+        <p>We watched estimators spend 80+ hours manually scanning spec books, only to miss critical cost traps buried on page 847. We saw project engineers get blindsided by Delegated Design requirements they never knew existed.</p>
+        
+        <p>So we built SiteRead - an AI-powered "second pair of eyes" that reads construction specifications the way humans do, but in minutes instead of days.</p>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">10M+</div>
+                <div class="stat-label">Pages Analyzed</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Cost Traps Found</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">95%</div>
+                <div class="stat-label">Time Saved</div>
+            </div>
+        </div>
+
+        <h2>Our Mission</h2>
+        <p>To help construction teams stop getting burned by hidden spec book details. We believe every estimator deserves to know exactly what they're signing up for before bid day.</p>
+
+        <h2>Based in Toronto</h2>
+        <p>We're proudly built in Toronto, working closely with General Contractors across Canada and the US to refine our AI for real-world construction workflows.</p>
+    </section>
+
+    <footer class="footer">
+        <span>© 2026 SiteRead Inc. Built in Toronto</span>
+    </footer>
+</body>
+</html>

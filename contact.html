@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | SiteRead</title>
+    <meta name="description" content="Contact SiteRead for support or sales inquiries.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📄</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #fafafa;
+            --color-text: #0a0a0a;
+            --color-text-muted: #525252;
+            --color-accent: #ea580c;
+            --color-border: #e5e5e5;
+            --color-border-dark: #0a0a0a;
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-sans: 'Space Grotesk', sans-serif;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        body { font-family: var(--font-mono); background: var(--color-bg); color: var(--color-text); line-height: 1.7; }
+        h1, h2, h3 { font-family: var(--font-sans); font-weight: 600; letter-spacing: -0.03em; }
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+        a { color: inherit; text-decoration: none; }
+        
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 0.75rem 0;
+            background: rgba(250, 250, 250, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(229, 229, 229, 0.6);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: -0.05em;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: opacity 0.2s ease;
+        }
+
+        .logo:hover {
+            opacity: 0.8;
+        }
+
+        .logo svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.875rem;
+        }
+
+        .nav-links a {
+            color: var(--color-text);
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+        
+        .page-header {
+            padding: 120px 2rem 2rem;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .page-header p {
+            color: var(--color-text-muted);
+            margin-top: 1rem;
+        }
+        
+        .contact-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        @media (max-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+        }
+        
+        .contact-info h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        .contact-method {
+            margin-bottom: 2rem;
+        }
+        .contact-method h3 {
+            font-size: 1rem;
+            color: var(--color-accent);
+            margin-bottom: 0.5rem;
+        }
+        .contact-method p {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+        .contact-method a {
+            color: var(--color-text);
+            text-decoration: underline;
+        }
+        .contact-method a:hover {
+            color: var(--color-accent);
+        }
+        
+        .contact-form h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-text-muted);
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--color-border);
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            background: transparent;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-accent);
+        }
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--color-text);
+            color: var(--color-bg);
+            border: none;
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background: var(--color-accent);
+        }
+        
+        .footer {
+            padding: 2rem;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="22" fill="#0a0a0a"/>
+                    <path d="M14 18L24 12L34 18V30L24 36L14 30V18Z" stroke="white" stroke-width="2.5" fill="none"/>
+                    <path d="M18 22L30 22" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M18 26L26 26" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+                    <circle cx="30" cy="30" r="5" fill="#ea580c"/>
+                    <path d="M27 30L33 30M30 27L30 33" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                SiteRead
+            </a>
+            <div class="nav-links">
+                <a href="features.html">Features</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>Contact Us</h1>
+        <p>Have questions? We'd love to hear from you.</p>
+    </header>
+
+    <section class="contact-grid">
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
+            
+            <div class="contact-method">
+                <h3>Sales</h3>
+                <p>For pricing, demos, and enterprise inquiries</p>
+                <p><a href="mailto:sales@siteread.app">sales@siteread.app</a></p>
+            </div>
+            
+            <div class="contact-method">
+                <h3>Support</h3>
+                <p>For technical help and account questions</p>
+                <p><a href="mailto:support@siteread.app">support@siteread.app</a></p>
+            </div>
+            
+            <div class="contact-method">
+                <h3>Partnerships</h3>
+                <p>For integration and partnership opportunities</p>
+                <p><a href="mailto:partners@siteread.app">partners@siteread.app</a></p>
+            </div>
+            
+            <div class="contact-method">
+                <h3>Office</h3>
+                <p>Toronto, Ontario, Canada</p>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h2>Send a Message</h2>
+            <form action="https://formsubmit.co/moosheashpaz@gmail.com" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_subject" value="New Contact Form Submission">
+                
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                
+                <div class="form-group">
+                    <label for="inquiry">Inquiry Type</label>
+                    <select id="inquiry" name="inquiry">
+                        <option value="sales">Sales</option>
+                        <option value="support">Support</option>
+                        <option value="partnership">Partnership</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <span>© 2026 SiteRead Inc. Built in Toronto</span>
+    </footer>
+</body>
+</html>

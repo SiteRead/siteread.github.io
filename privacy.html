@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | SiteRead</title>
+    <meta name="description" content="SiteRead privacy policy and data handling practices.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📄</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #fafafa;
+            --color-text: #0a0a0a;
+            --color-text-muted: #525252;
+            --color-accent: #ea580c;
+            --color-border: #e5e5e5;
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-sans: 'Space Grotesk', sans-serif;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        body { font-family: var(--font-mono); background: var(--color-bg); color: var(--color-text); line-height: 1.7; }
+        h1, h2, h3 { font-family: var(--font-sans); font-weight: 600; letter-spacing: -0.03em; }
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+        h2 { font-size: 1.5rem; margin: 3rem 0 1rem; }
+        h3 { font-size: 1.125rem; margin: 2rem 0 0.5rem; }
+        a { color: var(--color-accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 0.75rem 0;
+            background: rgba(250, 250, 250, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(229, 229, 229, 0.6);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: -0.05em;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: opacity 0.2s ease;
+        }
+
+        .logo:hover {
+            opacity: 0.8;
+        }
+
+        .logo svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.875rem;
+        }
+
+        .nav-links a {
+            color: var(--color-text);
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+        
+        .page-header {
+            padding: 120px 2rem 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .page-header p {
+            color: var(--color-text-muted);
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem;
+        }
+        .content p {
+            margin-bottom: 1rem;
+            color: var(--color-text-muted);
+        }
+        .content ul {
+            margin: 1rem 0 1rem 1.5rem;
+            color: var(--color-text-muted);
+        }
+        .content li {
+            margin-bottom: 0.5rem;
+        }
+        .last-updated {
+            font-style: italic;
+            color: var(--color-text-muted);
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-border);
+        }
+        
+        .footer {
+            padding: 2rem;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+        }
+        .footer a {
+            color: var(--color-text-muted);
+            margin: 0 0.5rem;
+        }
+        .footer a:hover {
+            color: var(--color-accent);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="22" fill="#0a0a0a"/>
+                    <path d="M14 18L24 12L34 18V30L24 36L14 30V18Z" stroke="white" stroke-width="2.5" fill="none"/>
+                    <path d="M18 22L30 22" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M18 26L26 26" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+                    <circle cx="30" cy="30" r="5" fill="#ea580c"/>
+                    <path d="M27 30L33 30M30 27L30 33" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                SiteRead
+            </a>
+            <div class="nav-links">
+                <a href="features.html">Features</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>Privacy Policy</h1>
+        <p>Last updated: February 2026</p>
+    </header>
+
+    <section class="content">
+        <h2>Overview</h2>
+        <p>SiteRead is committed to protecting your privacy and your project data. This policy explains how we handle information when you use our service.</p>
+
+        <h2>Data We Collect</h2>
+        <h3>Account Information</h3>
+        <p>When you create an account, we collect your name, email address, company name, and billing information.</p>
+
+        <h3>Project Documents</h3>
+        <p>You upload construction specifications and project documents for analysis. These may contain proprietary project information.</p>
+
+        <h3>Usage Data</h3>
+        <p>We collect information about how you use SiteRead, including pages processed, features used, and error logs.</p>
+
+        <h2>How We Use Your Data</h2>
+        <ul>
+            <li>To provide and improve our AI analysis services</li>
+            <li>To generate reports and submittal logs from your documents</li>
+            <li>To communicate with you about your account and service updates</li>
+            <li>To detect and prevent fraud or abuse</li>
+        </ul>
+
+        <h2>Data Security</h2>
+        <p>We implement enterprise-grade security measures:</p>
+        <ul>
+            <li>All data is encrypted in transit (TLS 1.3) and at rest (AES-256)</li>
+            <li>Documents are processed ephemerally and not stored permanently</li>
+            <li>We use secure cloud infrastructure with SOC 2 compliance</li>
+            <li>Access is restricted to authorized personnel only</li>
+        </ul>
+
+        <h2>AI Training</h2>
+        <p><strong>Important:</strong> We do not use your proprietary project data to train our AI models. Your specifications remain confidential and are only used to generate your specific reports.</p>
+
+        <h2>Data Retention</h2>
+        <p>Uploaded documents are automatically deleted after report generation is complete. Reports are retained for your access until you delete them or close your account.</p>
+
+        <h2>Your Rights</h2>
+        <p>You have the right to:</p>
+        <ul>
+            <li>Access your personal data</li>
+            <li>Correct inaccurate data</li>
+            <li>Delete your account and associated data</li>
+            <li>Export your data</li>
+            <li>Opt out of marketing communications</li>
+        </ul>
+
+        <h2>Contact</h2>
+        <p>For privacy-related questions or to exercise your rights, contact us at <a href="mailto:privacy@siteread.app">privacy@siteread.app</a>.</p>
+
+        <p class="last-updated">This privacy policy may be updated periodically. We will notify users of significant changes via email.</p>
+    </section>
+
+    <footer class="footer">
+        <span>© 2026 SiteRead Inc. Built in Toronto</span>
+        <div style="margin-top: 0.5rem;">
+            <a href="privacy.html">Privacy</a>
+            <a href="index.html">Home</a>
+        </div>
+    </footer>
+</body>
+</html>
