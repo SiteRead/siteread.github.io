@@ -4,186 +4,252 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Features | SiteRead</title>
-    <meta name="description" content="SiteRead features - AI-powered construction spec scanning.">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📄</text></svg>">
+    <meta name="description" content="SiteRead features — AI-powered construction spec scanning, trap detection, and submittal extraction.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%23ea580c%22/><path d=%22M9 6H7C6.2 6 5.5 6.7 5.5 7.5V10%22 stroke=%22white%22 stroke-width=%222%22 stroke-linecap=%22round%22/><path d=%22M23 6h2c.8 0 1.5.7 1.5 1.5V10%22 stroke=%22white%22 stroke-width=%222%22 stroke-linecap=%22round%22/><path d=%22M9 26H7c-.8 0-1.5-.7-1.5-1.5V22%22 stroke=%22white%22 stroke-width=%222%22 stroke-linecap=%22round%22/><path d=%22M23 26h2c.8 0 1.5-.7 1.5-1.5V22%22 stroke=%22white%22 stroke-width=%222%22 stroke-linecap=%22round%22/><line x1=%228%22 y1=%2216%22 x2=%2224%22 y2=%2216%22 stroke=%22white%22 stroke-width=%222%22 stroke-linecap=%22round%22/></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --color-bg: #fafafa;
-            --color-text: #0a0a0a;
-            --color-text-muted: #525252;
-            --color-accent: #ea580c;
-            --color-border: #e5e5e5;
-            --font-mono: 'JetBrains Mono', monospace;
-            --font-sans: 'Space Grotesk', sans-serif;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        body { font-family: var(--font-mono); background: var(--color-bg); color: var(--color-text); line-height: 1.7; }
-        h1, h2, h3 { font-family: var(--font-sans); font-weight: 600; letter-spacing: -0.03em; }
-        h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-        h2 { font-size: 1.5rem; margin-bottom: 1rem; }
-        a { color: inherit; text-decoration: none; }
-        
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            padding: 0.75rem 0;
-            background: rgba(250, 250, 250, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(229, 229, 229, 0.6);
-        }
+        :root{--bg:#050505;--bg-2:#0a0a0a;--bg-3:#111;--text:#eee;--text-2:#999;--text-3:#555;--accent:#ea580c;--accent-2:#fb923c;--teal:#2dd4bf;--border:rgba(255,255,255,0.07);--font:'Inter',-apple-system,sans-serif;--mono:'JetBrains Mono',monospace}
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:var(--font);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+        a{color:inherit;text-decoration:none}
+        ::selection{background:rgba(234,88,12,0.3)}
 
-        .nav-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        /* NAV */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 0;background:rgba(5,5,5,0.9);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
+        .nav-inner{max-width:1400px;margin:0 auto;padding:0 3rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{display:flex;align-items:center;gap:.6rem;font-family:var(--mono);font-weight:600;font-size:1rem;letter-spacing:-.03em}
+        .logo-mark{width:30px;height:30px;display:grid;place-items:center}
+        .logo-mark svg{width:16px;height:16px}
+        .nav-right{display:flex;align-items:center;gap:2.5rem}
+        .nav-links{display:flex;gap:1.5rem}
+        .nav-links a{font-size:.8rem;color:var(--text-2);transition:color .15s}
+        .nav-links a:hover{color:#fff}
+        .nav-btn{font-size:.8rem;font-weight:600;padding:.5rem 1.1rem;background:#fff;color:#000;border-radius:100px;transition:all .2s}
+        .nav-btn:hover{box-shadow:0 0 24px rgba(255,255,255,0.15);transform:translateY(-1px)}
 
-        .logo {
-            font-family: var(--font-mono);
-            font-weight: 700;
-            font-size: 1.25rem;
-            letter-spacing: -0.05em;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            transition: opacity 0.2s ease;
+        /* PAGE HERO */
+        .page-hero{
+            padding:10rem 3rem 4rem;
+            max-width:1400px;margin:0 auto;
         }
+        .page-hero .tag{font-family:var(--mono);font-size:.75rem;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem}
+        .page-hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;letter-spacing:-.05em;line-height:1;margin-bottom:1.25rem}
+        .page-hero p{font-size:1.15rem;color:var(--text-2);max-width:550px;line-height:1.6}
 
-        .logo:hover {
-            opacity: 0.8;
+        /* FEATURE ROWS — ALTERNATING LAYOUT */
+        .features{max-width:1400px;margin:0 auto;padding:2rem 3rem 6rem}
+        .f-row{
+            display:grid;grid-template-columns:1fr 1fr;gap:4rem;
+            align-items:center;padding:5rem 0;
+            border-top:1px solid var(--border);
         }
+        .f-row:last-child{border-bottom:1px solid var(--border)}
+        .f-row.reverse .f-visual{order:-1}
+        .f-copy .num{font-family:var(--mono);font-size:.7rem;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.75rem}
+        .f-copy h2{font-size:1.75rem;font-weight:700;letter-spacing:-.03em;margin-bottom:.75rem}
+        .f-copy p{color:var(--text-2);line-height:1.7;font-size:.95rem;margin-bottom:1rem}
+        .f-copy ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+        .f-copy ul li{font-size:.85rem;color:var(--text-2);display:flex;align-items:center;gap:.5rem}
+        .f-copy ul li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0}
+        .f-copy ul li.teal::before{background:var(--teal)}
 
-        .logo svg {
-            width: 40px;
-            height: 40px;
+        .f-visual{
+            background:var(--bg-3);border:1px solid var(--border);
+            border-radius:16px;padding:2.5rem;
+            min-height:280px;display:flex;align-items:center;justify-content:center;
         }
+        .f-visual-icon{font-size:4rem;opacity:.7}
+        .f-visual-code{
+            font-family:var(--mono);font-size:.75rem;color:var(--text-2);
+            line-height:1.9;white-space:pre;
+        }
+        .tc-g{color:var(--teal)}.tc-o{color:var(--accent-2)}.tc-r{color:#ef4444}.tc-d{color:var(--text-3)}.tc-w{color:var(--text)}
+        .tc-h{background:rgba(234,88,12,0.12);color:var(--accent-2);padding:1px 5px;border-radius:3px}
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            font-size: 0.875rem;
+        /* CTA */
+        .page-cta{
+            padding:6rem 3rem;text-align:center;
+            border-top:1px solid var(--border);background:var(--bg-2);
         }
+        .page-cta h2{font-size:clamp(1.75rem,3vw,2.5rem);font-weight:800;letter-spacing:-.04em;margin-bottom:.75rem}
+        .page-cta p{color:var(--text-2);margin-bottom:2rem}
+        .page-cta a{
+            display:inline-flex;align-items:center;gap:.4rem;
+            padding:.75rem 1.75rem;background:var(--accent);color:#fff;
+            border-radius:100px;font-weight:600;font-size:.9rem;transition:all .25s;
+        }
+        .page-cta a:hover{background:var(--accent-2);box-shadow:0 0 30px rgba(234,88,12,0.3);transform:translateY(-2px)}
 
-        .nav-links a {
-            color: var(--color-text);
-            transition: color 0.2s ease;
-        }
+        /* FOOTER */
+        .footer{border-top:1px solid var(--border);padding:2.5rem 3rem}
+        .footer-inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+        .footer-copy{font-size:.75rem;color:var(--text-3)}
+        .footer-links{display:flex;gap:1.5rem}
+        .footer-links a{font-size:.75rem;color:var(--text-3);transition:color .15s}
+        .footer-links a:hover{color:var(--text)}
 
-        .nav-links a:hover {
-            color: var(--color-accent);
+        /* REVEAL */
+        .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+        .reveal.vis{opacity:1;transform:translateY(0)}
+
+        @media(max-width:900px){
+            .f-row{grid-template-columns:1fr;gap:2rem}
+            .f-row.reverse .f-visual{order:0}
+            .page-hero,.features,.page-cta,.footer{padding-left:1.5rem;padding-right:1.5rem}
+            .nav-inner{padding:0 1.5rem}
         }
-        
-        .page-header {
-            padding: 120px 2rem 4rem;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
+        @media(max-width:640px){
+            .nav-links{display:none}
         }
-        .page-header p {
-            color: var(--color-text-muted);
-            margin-top: 1rem;
-            font-size: 1.125rem;
-        }
-        
-        .features-grid {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 2rem 6rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-        }
-        .feature-card {
-            padding: 2rem;
-            border: 1px solid var(--color-border);
-        }
-        .feature-card h3 {
-            color: var(--color-accent);
-            margin-bottom: 0.5rem;
-        }
-        .feature-card p {
-            color: var(--color-text-muted);
-            font-size: 0.9rem;
-        }
-        
-        .footer {
-            padding: 2rem;
-            border-top: 1px solid var(--color-border);
-            text-align: center;
-            font-size: 0.875rem;
-            color: var(--color-text-muted);
-        }
+        @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
     </style>
 </head>
 <body>
-    <nav class="nav">
-        <div class="container nav-inner">
-            <a href="index.html" class="logo">
-                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="24" cy="24" r="22" fill="#0a0a0a"/>
-                    <path d="M14 18L24 12L34 18V30L24 36L14 30V18Z" stroke="white" stroke-width="2.5" fill="none"/>
-                    <path d="M18 22L30 22" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                    <path d="M18 26L26 26" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-                    <circle cx="30" cy="30" r="5" fill="#ea580c"/>
-                    <path d="M27 30L33 30M30 27L30 33" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                SiteRead
-            </a>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="index.html" class="logo">
+            <div class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3H4C3.45 3 3 3.45 3 4v4" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/><path d="M18 3h2c.55 0 1 .45 1 1v4" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/><path d="M6 21H4c-.55 0-1-.45-1-1v-4" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/><path d="M18 21h2c.55 0 1 .45 1 1v-4" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/></svg></div>
+            SiteRead
+        </a>
+        <div class="nav-right">
             <div class="nav-links">
                 <a href="features.html">Features</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </div>
+            <a href="index.html#cta" class="nav-btn">Get Early Access</a>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <header class="page-header">
-        <h1>Features</h1>
-        <p>AI-powered tools to help construction teams find hidden cost traps and manage submittals efficiently.</p>
-    </header>
+<header class="page-hero">
+    <div class="tag reveal">Features</div>
+    <h1 class="reveal">Built for how<br>construction works.</h1>
+    <p class="reveal">Not another generic OCR tool. SiteRead understands spec books, CSI divisions, and the traps designers hide in the fine print.</p>
+</header>
 
-    <section class="features-grid">
-        <div class="feature-card">
-            <h3>Messy PDF Support</h3>
-            <p>Upload scanned documents, crooked pages, or coffee-stained specs. Our OCR handles it all.</p>
+<section class="features">
+    <!-- Row 1 -->
+    <div class="f-row reveal">
+        <div class="f-copy">
+            <div class="num">01 — Detection</div>
+            <h2>Trap Detection</h2>
+            <p>Automatically surfaces the clauses that cost you money — the ones buried on page 847 that nobody catches until it's too late.</p>
+            <ul>
+                <li>Delegated Design requirements</li>
+                <li>Liquidated Damages clauses</li>
+                <li class="teal">Extended Warranty periods</li>
+                <li class="teal">Sole Source manufacturers</li>
+            </ul>
         </div>
-        <div class="feature-card">
-            <h3>Trap Detection</h3>
-            <p>Automatically flags Delegated Design, Liquidated Damages, Extended Warranties, and Sole Source requirements.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Submittal Extraction</h3>
-            <p>Identifies and catalogs all submittal requirements across thousands of spec pages.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Procore Export</h3>
-            <p>Download clean CSV files ready for direct upload to Procore or other project management tools.</p>
-        </div>
-        <div class="feature-card">
-            <h3>CSI MasterFormat</h3>
-            <p>Organizes findings by standard construction divisions for easy navigation.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Risk Scoring</h3>
-            <p>Prioritizes high-risk clauses that could impact project profitability.</p>
-        </div>
-    </section>
+        <div class="f-visual">
+            <div class="f-visual-code"><span class="tc-d">  Scanning section 09 30 00...</span>
 
-    <footer class="footer">
-        <span>© 2026 SiteRead Inc. Built in Toronto</span>
-    </footer>
+  <span class="tc-h">⚠ COST TRAP</span> <span class="tc-d">·</span> <span class="tc-o">Mockup</span> <span class="tc-d">····</span> Pg 412
+    <span class="tc-o">"Contractor shall construct</span>
+    <span class="tc-o"> a 100 sqft onsite mockup"</span>
+
+  <span class="tc-h">⚠ COST TRAP</span> <span class="tc-d">·</span> <span class="tc-r">Delegated</span> <span class="tc-d">·</span> Pg 847
+    <span class="tc-r">"Contractor shall retain a</span>
+    <span class="tc-r"> licensed PE to design..."</span>
+
+  <span class="tc-g">Risk Score: HIGH</span></div>
+        </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="f-row reverse reveal">
+        <div class="f-copy">
+            <div class="num">02 — Extraction</div>
+            <h2>Submittal Extraction</h2>
+            <p>Every submittal requirement across every section, automatically cataloged and organized by CSI MasterFormat division.</p>
+            <ul>
+                <li>Product Data, Samples, Shop Drawings</li>
+                <li>Mockups, Warranties, Certifications</li>
+                <li class="teal">Page number references</li>
+                <li class="teal">Section cross-references</li>
+            </ul>
+        </div>
+        <div class="f-visual">
+            <div class="f-visual-code"><span class="tc-d">  Submittals found: 24</span>
+
+  <span class="tc-g">✓</span> <span class="tc-w">09 30 00</span> · Product Data <span class="tc-d">·</span> Pg 12
+  <span class="tc-g">✓</span> <span class="tc-w">09 30 00</span> · Sample <span class="tc-d">·······</span> Pg 413
+  <span class="tc-g">✓</span> <span class="tc-w">09 30 00</span> · Warranty <span class="tc-d">·····</span> Pg 415
+  <span class="tc-g">✓</span> <span class="tc-w">07 92 00</span> · Shop Drawing <span class="tc-d">·</span> Pg 201
+  <span class="tc-g">✓</span> <span class="tc-w">08 11 00</span> · Certification <span class="tc-d"></span> Pg 89
+  <span class="tc-d">  ... 19 more items</span></div>
+        </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="f-row reveal">
+        <div class="f-copy">
+            <div class="num">03 — Messy PDFs</div>
+            <h2>Reads what others can't.</h2>
+            <p>Scanned crooked, low DPI, coffee-stained pages. Our OCR engine is trained specifically on construction documents — not generic text.</p>
+            <ul>
+                <li>Scanned & digital PDFs</li>
+                <li>200 to 2,000+ page documents</li>
+                <li class="teal">Low-quality scan recovery</li>
+                <li class="teal">Multi-column layout parsing</li>
+            </ul>
+        </div>
+        <div class="f-visual" style="flex-direction:column;gap:.75rem;font-family:var(--mono);font-size:.75rem;color:var(--text-3)">
+            <div style="display:flex;gap:1rem;align-items:center"><span style="font-size:2rem">📄</span><span><span style="color:var(--text)">Project_Manual_v3.pdf</span><br>1,247 pages · scanned · 150 DPI</span></div>
+            <div style="width:100%;height:4px;background:var(--bg);border-radius:99px;overflow:hidden"><div style="width:100%;height:100%;background:linear-gradient(90deg,var(--accent),var(--teal));border-radius:99px"></div></div>
+            <span style="color:var(--teal)">✓ Processing complete — 24 submittals, 3 traps</span>
+        </div>
+    </div>
+
+    <!-- Row 4 -->
+    <div class="f-row reverse reveal">
+        <div class="f-copy">
+            <div class="num">04 — Export</div>
+            <h2>Procore-ready output.</h2>
+            <p>Download clean CSV files formatted for direct upload to Procore, or export to Excel with every finding organized by division.</p>
+            <ul>
+                <li>Procore CSV format</li>
+                <li>Excel export with risk scores</li>
+                <li class="teal">CSI MasterFormat organization</li>
+                <li class="teal">One-click upload</li>
+            </ul>
+        </div>
+        <div class="f-visual" style="flex-direction:column;gap:1rem;align-items:flex-start">
+            <div style="display:flex;gap:.75rem;align-items:center;font-size:.85rem"><span style="padding:.4rem .8rem;border-radius:8px;background:rgba(45,212,191,0.15);color:var(--teal);font-size:.75rem;font-weight:600">CSV</span> <span style="color:var(--text)">submittal_log_A12.csv</span></div>
+            <div style="display:flex;gap:.75rem;align-items:center;font-size:.85rem"><span style="padding:.4rem .8rem;border-radius:8px;background:rgba(234,88,12,0.15);color:var(--accent-2);font-size:.75rem;font-weight:600">XLSX</span> <span style="color:var(--text)">risk_report_A12.xlsx</span></div>
+            <div style="display:flex;gap:.75rem;align-items:center;font-size:.85rem"><span style="padding:.4rem .8rem;border-radius:8px;background:rgba(255,255,255,0.08);color:var(--text);font-size:.75rem;font-weight:600">API</span> <span style="color:var(--text)">Procore direct sync</span></div>
+        </div>
+    </div>
+</section>
+
+<section class="page-cta">
+    <h2 class="reveal">Ready to try it?</h2>
+    <p class="reveal">Get your first spec book scanned for free during our beta.</p>
+    <a href="index.html#cta" class="reveal">Join the Beta →</a>
+</section>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <span class="footer-copy">© 2026 SiteRead Inc. Built in Toronto.</span>
+        <div class="footer-links">
+            <a href="features.html">Features</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target)}}),{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>
